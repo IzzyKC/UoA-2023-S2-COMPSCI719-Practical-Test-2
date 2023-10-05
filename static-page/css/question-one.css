@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Indie Flower';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: "Indie Flower", "Times New Roman";
+}
+
+p {
+    text-align: justify;
+    font-size: 130%;
+}
+
+h1, h2, h3, h4, h5, h6, .important p {
+    font-weight: bold;
+    color: Navy;
+}
+
+hr {
+	border: LightSlateGray 0.5px dashed;
+	width: 50%;
+}
+
+.important {
+    border: 1px solid red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.main-image {
+    margin: 10px;
+}
