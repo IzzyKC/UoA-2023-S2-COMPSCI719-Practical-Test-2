@@ -20,6 +20,8 @@ app.set("view engine", "handlebars");
 // TODO Enable access to the "public" folder
 // -------------------------------------------------------------------------
 const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
+
 
 // -------------------------------------------------------------------------
 
