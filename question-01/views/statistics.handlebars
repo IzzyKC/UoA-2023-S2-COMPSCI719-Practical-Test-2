@@ -1,0 +1,26 @@
+<div>
+    <h1>Trip statistics:</h1>
+    <p>Total distance travelled: {{distance}}</p>
+    <p>Litres of fuel used: {{fuel}}</p>
+    <p>Fuel price: {{fuelPrice}}</p>
+    <p>Total price: {{totalPrice}}</p>
+    <p>Number of stops: {{stops}}</p>
+    <p>Average Price per stop: 
+        {{#if restaurants}}
+            {{avgPricePerStop}}
+        {{else}}
+            No stops were entered
+        {{/if}}
+    </p>
+
+    <h1>Restaurants Visited:</h1>
+    {{#if restaurants}}
+        <ul>
+            {{#each restaurants}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No restaurants were entered</p>
+    {{/if}}
+</div>

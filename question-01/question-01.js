@@ -28,6 +28,24 @@ app.get("/", function (req, res) {
 });
 
 // YOU CAN CREATE YOU HANDLER FUNCTION/S HERE
+app.post("/statistics", function(req, res){
+  const data = req.body;
+  const floatDistance = parseFloat(data.distance);
+  const floatFuelUsed = parseFloat(data.fuel);
+  const floatFuelPrice = parseFloat(data.fuelprice).toFixed(2);
+  const totalPrice = (floatFuelUsed * floatFuelPrice).toFixed(2);
+  res.locals.distance = data.distance;
+  res.locals.fuel = data.fuel;
+  res.locals.fuelPrice = floatFuelPrice;
+  res.locals.totalPrice = totalPrice;
+  const restaurants = makeArray(data.restaurants);
+  res.locals.stops = restaurants.length;
+  res.locals.avgPricePerStop = restaurants ? (totalPrice/restaurants.length).toFixed(2) : 0.00 ;
+  res.locals.restaurants = restaurants;
+
+  res.render("statistics");
+
+});
 
 // Start the server running. Once the server is running, the given function will be called, which will
 // log a simple message to the server console. Any console.log() statements in your node.js code
